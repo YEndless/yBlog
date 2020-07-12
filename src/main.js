@@ -4,6 +4,9 @@ import linkurl from './assets/js/common'
 import {post, get, del} from './assets/js/axios'
 import axios from 'axios'
 
+import less from 'less'
+// eslint-disable-next-line no-undef
+Vue.use(less)
 // eslint-disable-next-line no-undef
 Vue.prototype.$linkurl = linkurl
 // eslint-disable-next-line no-undef

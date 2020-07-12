@@ -8,7 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: resolve => require(['../view/Main.vue'], resolve),
+      component: resolve => require(['../view/Index.vue'], resolve),
       meta: {
         title: 'ywyqqq'
       }

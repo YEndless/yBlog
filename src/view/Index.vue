@@ -1,78 +1,101 @@
 <template>
-  <div>
-    <div class="header">
-      <el-row>
-        <el-col :span="2"><div class="header-content"></div></el-col>
-        <el-col :span="4"><div class="header-content">ywyqqq</div></el-col>
-        <el-col :span="6"><div class="header-content"></div></el-col>
-        <el-col :span="2">
-          <router-link to="/timeline">
-            <div class="header-content">首页</div>
-          </router-link>
-        </el-col>
-        <el-col :span="2">
-          <router-link to="/timeline">
-            <div class="header-content">博客</div>
-          </router-link>
-        </el-col>
-        <el-col :span="2">
-          <router-link to="/board">
-            <div class="header-content">留言板</div>
-          </router-link>
-        </el-col>
-        <el-col :span="2">
-          <router-link to="/timeline">
-            <div class="header-content">时间线</div>
-          </router-link>
-        </el-col>
-        <el-col :span="2">
-          <router-link to="/aboutme">
-            <div class="header-content">关于</div>
-          </router-link>
-        </el-col>
-        <el-col :span="2"><div class="header-content">aaa</div></el-col>
-      </el-row>
+  <div id="header" class="">
+    <div class="header-nav container hidden-xs">
+      <div>
+        aaaaaaaaa
+      </div>
     </div>
-    <div style="margin-top: 1rem;">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+    <div class="header-nav-m visible-xs">
+      <div class="header-nav-m-menu text-center">
+        {{menuName}}
+        <div
+          class="header-nav-m-menu-wrapper"
+          data-toggle="collapse"
+          data-target="#menu"
+          @click="menuClick"
+        >
+          <span :class="menuClass">aaa</span>
+        </div>
+        <!-- 导航内容 -->
+        <div id="menu" class="header-nav-m-wrapper collapse">
+          bbb
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'Index',
+  name: 'Header',
   data () {
     return {
-      activeIndex: '1'
+      navIndex: 0,
+      menuName: '首页',
+      menuClass: 'glyphicon glyphicon-menu-down'
     }
   },
   methods: {
-    handleSelect (key, keyPath) {
-      console.log(key, keyPath)
+    navClick (index, name) {
+      this.navIndex = index
+      this.menuName = name
+    },
+    menuClick () {
+      if (this.menuClass === 'glyphicon glyphicon-menu-down') {
+        this.menuClass = 'glyphicon glyphicon-menu-up'
+      } else {
+        this.menuClass = 'glyphicon glyphicon-menu-down'
+      }
     }
   }
 }
 </script>
-
 <style scoped>
-.header{
-  border-bottom: 1px solid black;
-  padding-bottom: 1rem;
-}
-.header-content{
-  font-size: 1rem ;
-  font-weight: 700 ;
-  min-height: 1rem;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.router-link-active {
-  text-decoration: none;
-}
+  #header .header-top span {
+    margin: 0 8px;
+  }
+  #header .header-nav {
+    height: 110px;
+  }
+  @media screen and (max-width: 997px) {
+    #header .header-nav-m {
+      position: relative;
+    }
+    #header .header-nav-m .header-nav-m-menu {
+      color: #fff;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+      background: #474747;
+      position: relative;
+    }
+    #header .header-nav-m .header-nav-m-menu-wrapper {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -20px;
+      width: 50px;
+      height: 40px;
+      color: #fff;
+      z-index: 999999;
+      font-size: 12px;
+    }
+    #header .header-nav-m .header-nav-m-wrapper {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: #474747;
+      z-index: 9999999;
+    }
+  }
+  .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
