@@ -1,14 +1,13 @@
 <template>
-    <div>
-      404
-    </div>
+<div>aaa</div>
 </template>
 
 <script>
 export default {
+  name: 'aboutme'
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

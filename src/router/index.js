@@ -10,25 +10,55 @@ export default new Router({
       path: '/',
       component: resolve => require(['../view/Main.vue'], resolve),
       meta: {
-        title: ''
+        title: 'ywyqqq'
       }
     },
     {
-      path: '/test',
-      component: resolve => require(['../view/test.vue'], resolve),
+      path: '/test2',
+      component: resolve => require(['../view/test2.vue'], resolve),
       meta: {
-        title: ''
+        title: 'test'
       }
     },
     {
-      path: '/error/404',
-      name: 'notFound',
-      // component: notFound
-      component: resolve => require(['../view/404.vue'], resolve)
+      path: '/test3',
+      component: resolve => require(['../view/t.vue'], resolve),
+      meta: {
+        title: 'test'
+      }
+    },
+    {
+      path: '/Index',
+      component: resolve => require(['../view/Index.vue'], resolve),
+      meta: {
+        title: '主页'
+      },
+      children: [
+        {
+          path: '/timeline',
+          component: resolve => require(['../view/Timeline.vue'], resolve),
+          meta: {
+            title: '时间线'
+          }
+        },
+        {
+          path: '/test',
+          component: resolve => require(['../view/test.vue'], resolve),
+          meta: {
+            title: 'test'
+          }
+        },
+        {
+          path: '/error/404',
+          name: 'notFound',
+          title: '404',
+          component: resolve => require(['../view/404.vue'], resolve)
 
-    }, {
-      path: '*', // 此处需特别注意置于最底部
-      redirect: '/error/404'
+        }, {
+          path: '*', // 此处需特别注意置于最底部
+          redirect: '/error/404'
+        }
+      ]
     }
   ]
 })
