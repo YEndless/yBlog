@@ -1,27 +1,32 @@
 <template>
-  <div id="header" class="">
-    <div class="header-nav container hidden-xs">
-      <div>
-        aaaaaaaaa
-      </div>
-    </div>
-    <div class="header-nav-m visible-xs">
-      <div class="header-nav-m-menu text-center">
-        {{menuName}}
-        <div
-          class="header-nav-m-menu-wrapper"
-          data-toggle="collapse"
-          data-target="#menu"
-          @click="menuClick"
-        >
-          <span :class="menuClass">aaa</span>
-        </div>
-        <!-- 导航内容 -->
-        <div id="menu" class="header-nav-m-wrapper collapse">
-          bbb
-        </div>
-      </div>
-    </div>
+  <div>
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand href="#">ywyqqq</b-navbar-brand>
+
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item href="#">首页</b-nav-item>
+        </b-navbar-nav>
+        <b-img src="https://upload.jianshu.io/users/upload_avatars/13891058/6ef650bb-abb8-482e-951c-afe078bfddf7.png"
+               style="width: 3rem ; height: 3rem ; border-radius: 50% ;"
+               fluid alt="Responsive image"></b-img>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-navbar-nav>
+            <b-nav-item href="#">留言板</b-nav-item>
+            <b-nav-item href="#">文章</b-nav-item>
+          </b-navbar-nav>
+          <b-nav-item-dropdown text="归档" right>
+            <b-dropdown-item href="#">时间线</b-dropdown-item>
+            <b-dropdown-item href="#">分类</b-dropdown-item>
+            <b-dropdown-item href="#">标签</b-dropdown-item>
+          </b-nav-item-dropdown>
+          <b-nav-item href="#">关于</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </div>
 </template>
 <script>
@@ -30,72 +35,12 @@ export default {
   data () {
     return {
       navIndex: 0,
-      menuName: '首页',
-      menuClass: 'glyphicon glyphicon-menu-down'
+      menuName: '首页'
     }
   },
   methods: {
-    navClick (index, name) {
-      this.navIndex = index
-      this.menuName = name
-    },
-    menuClick () {
-      if (this.menuClass === 'glyphicon glyphicon-menu-down') {
-        this.menuClass = 'glyphicon glyphicon-menu-up'
-      } else {
-        this.menuClass = 'glyphicon glyphicon-menu-down'
-      }
-    }
   }
 }
 </script>
 <style scoped>
-  #header .header-top span {
-    margin: 0 8px;
-  }
-  #header .header-nav {
-    height: 110px;
-  }
-  @media screen and (max-width: 997px) {
-    #header .header-nav-m {
-      position: relative;
-    }
-    #header .header-nav-m .header-nav-m-menu {
-      color: #fff;
-      height: 50px;
-      font-size: 20px;
-      line-height: 50px;
-      background: #474747;
-      position: relative;
-    }
-    #header .header-nav-m .header-nav-m-menu-wrapper {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -20px;
-      width: 50px;
-      height: 40px;
-      color: #fff;
-      z-index: 999999;
-      font-size: 12px;
-    }
-    #header .header-nav-m .header-nav-m-wrapper {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      background: #474747;
-      z-index: 9999999;
-    }
-  }
-  .glyphicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 </style>

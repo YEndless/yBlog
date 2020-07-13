@@ -28,6 +28,13 @@ export default new Router({
       }
     },
     {
+      path: '/h',
+      component: resolve => require(['../components/HelloWorld'], resolve),
+      meta: {
+        title: 'h'
+      }
+    },
+    {
       path: '/Index',
       component: resolve => require(['../view/Index.vue'], resolve),
       meta: {

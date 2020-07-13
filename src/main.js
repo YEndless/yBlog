@@ -5,6 +5,12 @@ import {post, get, del} from './assets/js/axios'
 import axios from 'axios'
 
 import less from 'less'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// eslint-disable-next-line no-undef
+Vue.use(BootstrapVue)
 // eslint-disable-next-line no-undef
 Vue.use(less)
 // eslint-disable-next-line no-undef
@@ -13,11 +19,6 @@ Vue.prototype.$linkurl = linkurl
 Vue.prototype.$axios = axios
 // eslint-disable-next-line no-undef
 Vue.config.productionTip = false
-
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-
-// Vue.use(ElementUI);
 
 // eslint-disable-next-line no-undef
 Vue.prototype.$post = post
