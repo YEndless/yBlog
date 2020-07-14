@@ -1,36 +1,94 @@
 <template>
-    <div>
-      <el-row :gutter="10">
-        <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></el-col>
-        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></el-col>
-      </el-row>
-
+  <div>
+    <div class="main-box">
+      <div class="g-of-h">
+        <div class="g-f-l box-l animated"></div>
+        <div class="g-f-l box-r animated"></div>
+      </div>
+      <div class="box-b animated"></div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'test'
+  name: ''
 }
 </script>
 
 <style scoped>
-  .el-col {
-    border-radius: 4px;
+  .g-of-h{
+    overflow: hidden;
   }
-  .bg-purple-dark {
-    background: #99a9bf;
+  .g-f-l{
+    float: left;
   }
-  .bg-purple {
-    background: #d3dce6;
+  .g-f-r{
+    float: right;
   }
-  .bg-purple-light {
-    background: #e5e9f2;
+  .main-box{
+    width: 1200px;
+    margin: 0 auto;
   }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
+  .box-l{
+    width: 200px;
+    height: 200px;
+    background-color: #8a6de9;
+    animation-name: fadeLeftIn;
+    -webkit-animation-name: fadeLeftIn;
+  }
+  .box-r{
+    margin-left: 20px;
+    width: 500px;
+    height: 200px;
+    background-color: #FDB9B9;
+    animation-name: fadeRightIn;
+    -webkit-animation-name: fadeRightIn;
+  }
+  .box-b{
+    width: 720px;
+    height: 200px;
+    animation-name: fadeBottomIn;
+    -webkit-animation-name: fadeBottomIn;
+    background-color: #888888;
+    margin-top: 20px;
+  }
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @keyframes fadeLeftIn {
+    0%{
+      opacity: 0;
+      transform: translate3d(-100%,0,0);
+    }
+    100%{
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fadeRightIn {
+    0%{
+      opacity: 0;
+      transform: translate3d(100%,0,0);
+    }
+    100%{
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fadeBottomIn {
+    0%{
+      opacity: 0;
+      transform: translate3d(0,100%,0);
+      -webkit-transform: translate3d(0,100%,0);
+    }
+    100%{
+      opacity: 1;
+      transform: none;
+      -webkit-transform: none;
+    }
   }
 </style>

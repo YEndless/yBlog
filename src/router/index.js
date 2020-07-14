@@ -21,8 +21,8 @@ export default new Router({
       }
     },
     {
-      path: '/test3',
-      component: resolve => require(['../view/t.vue'], resolve),
+      path: '/test',
+      component: resolve => require(['../view/test.vue'], resolve),
       meta: {
         title: 'test'
       }
