@@ -1,6 +1,6 @@
 <template>
-  <div>
-    aaa
+  <div style="text-align: left ;">
+    <div>aaa</div>
   </div>
 </template>
 

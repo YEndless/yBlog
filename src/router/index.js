@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Sort from '../view/Sort'
 
 Vue.use(Router)
 
@@ -10,42 +11,35 @@ export default new Router({
       path: '/',
       component: resolve => require(['../view/Index.vue'], resolve),
       meta: {
-        title: 'ywyqqq'
-      }
-    },
-    {
-      path: '/test2',
-      component: resolve => require(['../view/test2.vue'], resolve),
-      meta: {
-        title: 'test'
-      }
-    },
-    {
-      path: '/test',
-      component: resolve => require(['../view/test.vue'], resolve),
-      meta: {
-        title: 'test'
-      }
-    },
-    {
-      path: '/h',
-      component: resolve => require(['../components/HelloWorld'], resolve),
-      meta: {
-        title: 'h'
-      }
-    },
-    {
-      path: '/Index',
-      component: resolve => require(['../view/Index.vue'], resolve),
-      meta: {
         title: '主页'
       },
       children: [
+        {
+          path: '/',
+          component: resolve => require(['../view/Main.vue'], resolve),
+          meta: {
+            title: 'main'
+          }
+        },
+        {
+          path: '/about',
+          component: resolve => require(['../view/aboutme.vue'], resolve),
+          meta: {
+            title: 'main'
+          }
+        },
         {
           path: '/timeline',
           component: resolve => require(['../view/Timeline.vue'], resolve),
           meta: {
             title: '时间线'
+          }
+        },
+        {
+          path: '/sort',
+          component: Sort,
+          meta: {
+            title: '分类'
           }
         },
         {
@@ -56,7 +50,7 @@ export default new Router({
           }
         },
         {
-          path: '/error/404',
+          path: '/404',
           name: 'notFound',
           title: '404',
           component: resolve => require(['../view/404.vue'], resolve)

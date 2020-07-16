@@ -4,12 +4,14 @@ import Vue from 'vue'
 import linkurl from './assets/js/common'
 import {post, get, del} from './assets/js/axios'
 import axios from 'axios'
-
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import less from 'less'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+Vue.use(ElementUI)
 Vue.use(BootstrapVue)
 Vue.use(less)
 Vue.prototype.$linkurl = linkurl
